@@ -1,11 +1,10 @@
 install:
-	composer install
+	poetry install
 
 test:
-	composer exec phpunit
+	poetry run pytest
 
 lint:
-	composer exec --verbose phpcs -- --standard=PSR12 src tests
+	poetry run flake8 search_engine 
 
-lint-fix:
-	composer exec --verbose phpcbf -- --standard=PSR12 src tests
+.PHONY: test
