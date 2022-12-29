@@ -20,7 +20,7 @@ class SearchEngine
     {
         $textTerms = Str::of($text)
             ->explode(' ')
-            ->map('normalize')
+            ->map(fn($word) => normalize($word))
             ->filter();
 
         $currentIndex = $this->index->only($textTerms);
