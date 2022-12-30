@@ -1,10 +1,10 @@
 install:
-	poetry install
+	npm ci
 
 test:
-	poetry run pytest
+	npm test
 
 lint:
-	poetry run flake8 search_engine 
+	npx eslint .
 
 .PHONY: test
